@@ -39,6 +39,10 @@
       margin-top: 30px;
     }
 
+    form {
+      margin-top: 20px;
+    }
+
     input[type="email"] {
       padding: 12px;
       font-size: 16px;
@@ -94,8 +98,10 @@
   <p>Our first project: a smarter way to complete your World Cup sticker album.</p>
 
   <div class="cta">
-    <input type="email" placeholder="Your email" />
-    <button>Join the Waitlist</button>
+    <form id="waitlistFormTop">
+      <input type="email" placeholder="Your email" required />
+      <button type="submit">Join the Waitlist</button>
+    </form>
   </div>
 </header>
 
@@ -152,14 +158,33 @@
   <p>Join the waitlist and be among the first to try it.</p>
 
   <div class="cta">
-    <input type="email" placeholder="Your email" />
-    <button>Join the Waitlist</button>
+    <form id="waitlistFormBottom">
+      <input type="email" placeholder="Your email" required />
+      <button type="submit">Join the Waitlist</button>
+    </form>
   </div>
 </section>
 
 <footer>
   <p>(A)IROH — Software for everyday life.</p>
 </footer>
+
+<script>
+const GOOGLE_FORM_URL = "https://forms.gle/TVy8E6ZXsUeDXPkJ9";
+
+function redirectToForm(event, formId) {
+  event.preventDefault();
+  const form = document.getElementById(formId);
+  const email = form.querySelector("input").value;
+
+  // Redirect user to the Google Form
+  window.location.href = GOOGLE_FORM_URL;
+}
+
+
+document.getElementById("waitlistFormTop").addEventListener("submit", (e)=>redirectToForm(e,"waitlistFormTop"));
+document.getElementById("waitlistFormBottom").addEventListener("submit", (e)=>redirectToForm(e,"waitlistFormBottom"));
+</script>
 
 </body>
 </html>
