@@ -28,6 +28,11 @@
       margin-bottom: 20px;
     }
 
+    h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
     p {
       max-width: 700px;
       margin: 0 auto 20px auto;
@@ -81,12 +86,71 @@
       background: #f7f7f7;
     }
 
+    /* ── Privacy Policy ── */
+    #privacy {
+      text-align: left;
+      background: #f9f9f9;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .privacy-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .privacy-container h2 {
+      text-align: left;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .privacy-date {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+      display: block;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .privacy-container h3 {
+      font-size: 17px;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    .privacy-container p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0 0 12px 0;
+      max-width: none;
+      text-align: left;
+    }
+
+    .privacy-container ul {
+      max-width: none;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
+      padding-left: 20px;
+      margin: 0 0 12px 0;
+    }
+
     footer {
       padding: 40px 20px;
       text-align: center;
       background: #fafafa;
       font-size: 14px;
       color: #555;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    footer a {
+      color: #555;
+      text-decoration: underline;
+      margin: 0 8px;
     }
   </style>
 </head>
@@ -165,8 +229,91 @@
   </div>
 </section>
 
+<!-- ── Privacy Policy ─────────────────────────────────────────────────────── -->
+<section id="privacy">
+  <div class="privacy-container">
+    <h2>Privacy Policy</h2>
+    <span class="privacy-date">Last updated: April 28, 2026</span>
+
+    <p>
+      This Privacy Policy describes how <strong>(A)IROH</strong> ("we", "us", or "our")
+      handles information in connection with the <strong>Álbum Mundial 2026: Stickers</strong>
+      mobile application ("the App").
+    </p>
+
+    <h3>1. Information We Collect</h3>
+    <p>
+      The App is designed to work entirely on your device. We do not collect, store, or
+      transmit any personally identifiable information to our servers.
+    </p>
+    <p>If you choose to enable analytics during onboarding, we collect:</p>
+    <ul>
+      <li>Anonymous usage data (screens visited, features used, session duration)</li>
+      <li>Device type, operating system version, and language settings</li>
+      <li>App performance metrics (e.g. crash reports)</li>
+    </ul>
+    <p>
+      This data is collected anonymously through Firebase Analytics (Google) and cannot
+      be used to identify you personally. You can disable analytics at any time from
+      within the App.
+    </p>
+
+    <h3>2. Camera Permission</h3>
+    <p>
+      The App requests access to your device's camera solely to scan QR codes for the
+      sticker trading feature. We do not capture, store, or transmit any photos or
+      video. Camera access is only active when you initiate a QR scan.
+    </p>
+
+    <h3>3. Data Storage</h3>
+    <p>
+      All your sticker collection data (stickers marked, duplicates, trade history) is
+      stored locally on your device using SQLite. This data never leaves your device and
+      is not accessible to us.
+    </p>
+
+    <h3>4. Trading Feature</h3>
+    <p>
+      The QR-based trading feature works peer-to-peer between devices. No trade data is
+      sent to or stored on our servers. The only information shared during a trade is
+      the QR code content exchanged directly between two devices.
+    </p>
+
+    <h3>5. Third-Party Services</h3>
+    <p>
+      If analytics is enabled, data is processed by <strong>Google Firebase Analytics</strong>.
+      You can review Google's privacy policy at
+      <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.
+    </p>
+
+    <h3>6. Children's Privacy</h3>
+    <p>
+      The App does not knowingly collect any information from children under 13. If you
+      believe a child has provided us with personal information, please contact us and
+      we will delete it immediately.
+    </p>
+
+    <h3>7. Changes to This Policy</h3>
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will be reflected
+      on this page with an updated date. Continued use of the App after changes
+      constitutes acceptance of the new policy.
+    </p>
+
+    <h3>8. Contact</h3>
+    <p>
+      If you have any questions about this Privacy Policy, please contact us at:<br />
+      <strong>airoh.studio@gmail.com</strong>
+    </p>
+  </div>
+</section>
+
 <footer>
-  <p>(A)IROH — Software for everyday life.</p>
+  <p>
+    (A)IROH — Software for everyday life.
+    <br /><br />
+    <a href="#privacy">Privacy Policy</a>
+  </p>
 </footer>
 
 <script>
@@ -176,14 +323,11 @@ function redirectToForm(event, formId) {
   event.preventDefault();
   const form = document.getElementById(formId);
   const email = form.querySelector("input").value;
-
-  // Redirect user to the Google Form
   window.location.href = GOOGLE_FORM_URL;
 }
 
-
-document.getElementById("waitlistFormTop").addEventListener("submit", (e)=>redirectToForm(e,"waitlistFormTop"));
-document.getElementById("waitlistFormBottom").addEventListener("submit", (e)=>redirectToForm(e,"waitlistFormBottom"));
+document.getElementById("waitlistFormTop").addEventListener("submit", (e) => redirectToForm(e, "waitlistFormTop"));
+document.getElementById("waitlistFormBottom").addEventListener("submit", (e) => redirectToForm(e, "waitlistFormBottom"));
 </script>
 
 </body>
